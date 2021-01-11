@@ -13,7 +13,7 @@ extension_modules = []
 def get_boost_version(out=None):
     if out is None:
         out = subprocess.check_output(
-            r"ldconfig -p | grep -E 'libboost_python.*\.so '", shell=True)
+            r"ldconfig -p | grep -E 'libboost_python.*\.so'", shell=True)
 
     ver = os.path.splitext(out.split()[0][3:])[0].decode()
     return ver
